@@ -1,0 +1,35 @@
+// schema.prisma
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb" // or mysql, sqlite, etc.
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id                  String  @id @default(auto()) @map("_id") @db.ObjectId
+  name                String?
+  email               String   @unique
+  hashedPassword      String
+	image               String?
+	emailVerified       DateTime
+  todos               Todo[]
+  createdAt           DateTime @default(now())
+  updatedAt           DateTime @updatedAt
+}
+
+model Todo {
+  id        String  @id @default(auto()) @map("_id") @db.ObjectId
+  title     String
+  content   String
+  userId    String
+  user      User     @relation(fields: [userId], references: [id])
+  versions  Json     @default("[]") // Store versions as a JSON array
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+
+

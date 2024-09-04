@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Alice&display=swap');
+@import 'bootstrap-icons/font/bootstrap-icons.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+	@apply h-full;
+	/* Replace bg-zinc-900 with a greenish background color */
+	background-color: #2a5d3e; /* Example greenish color */
+}                
+
+#__next {
+	@apply h-full;
+}
+
+html {
+	@apply h-full;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: 'Alice', serif;
+}
+
+
+
+
+
+/* stream-boat-main */

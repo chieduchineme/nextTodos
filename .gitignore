@@ -1,0 +1,6 @@
+.next
+node_modules
+.env
+build
+.env.local
+.optim_checks.md
