@@ -1,7 +1,7 @@
 // components/EditTodo/index.tsx
 import React from 'react';
 import { todoType } from '@/interfaces/types/todoTypes';
-import { useEditTodo } from '../hooks/useEditTodo';
+import { useEditTodo } from '../hooks/useEditTodo'
 
 const EditTodo: React.FC<{ todo: todoType }> = ({ todo }) => {
     const {
